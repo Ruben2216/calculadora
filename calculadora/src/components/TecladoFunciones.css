@@ -1,0 +1,159 @@
+/* TecladoFunciones.css */
+.teclado-funciones {
+  height: 100%;
+}
+
+.grid-funciones {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 10px;
+  height: auto;
+  margin-bottom: 15px;
+  max-width: 100%;
+}
+
+.boton-funcion {
+  background: linear-gradient(145deg, #2c5282, #2a4365);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  min-height: 50px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.boton-funcion:hover {
+  background: linear-gradient(145deg, #4c72a2, #3c6292);
+  transform: scale(1.08);
+  box-shadow: 
+    0 12px 30px rgba(44, 82, 130, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  color: #e6f3ff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.boton-funcion:active {
+  transform: scale(1.04);
+  box-shadow: 
+    inset 3px 3px 10px rgba(0, 0, 0, 0.4),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
+}
+
+/* Colores específicos para sin y log */
+.boton-funcion:nth-child(1) { /* sin */
+  background: linear-gradient(145deg, #2c5282, #1e3a52);
+}
+
+.boton-funcion:nth-child(1):hover {
+  background: linear-gradient(145deg, #5c82b2, #4c72a2);
+  transform: scale(1.08);
+  box-shadow: 
+    0 12px 30px rgba(44, 82, 130, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  color: #e6f3ff;
+}
+
+.boton-funcion:nth-child(2) { /* log */
+  background: linear-gradient(145deg, #1e3a52, #1a202c);
+}
+
+.boton-funcion:nth-child(2):hover {
+  background: linear-gradient(145deg, #3e5a72, #2e4a62);
+  transform: scale(1.08);
+  box-shadow: 
+    0 12px 30px rgba(30, 58, 82, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  color: #e8f2ff;
+}
+
+/* Paréntesis con estilo diferente */
+.boton-funcion:nth-child(3), /* ( */
+.boton-funcion:nth-child(4) { /* ) */
+  background: linear-gradient(145deg, #304356, #1e2a36);
+  font-size: 20px;
+}
+
+.boton-funcion:nth-child(3):hover,
+.boton-funcion:nth-child(4):hover {
+  background: linear-gradient(145deg, #506476, #405466);
+  transform: scale(1.08);
+  box-shadow: 
+    0 12px 30px rgba(48, 67, 86, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  color: #ffffff;
+}
+
+/* Efecto sutil en funciones */
+.boton-funcion::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.boton-funcion:hover::before {
+  opacity: 1;
+}
+
+/* Animación de entrada */
+.boton-funcion {
+  animation: slideInLeft 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.boton-funcion:nth-child(1) { animation-delay: 0.1s; }
+.boton-funcion:nth-child(2) { animation-delay: 0.15s; }
+.boton-funcion:nth-child(3) { animation-delay: 0.2s; }
+.boton-funcion:nth-child(4) { animation-delay: 0.25s; }
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efecto especial sutil para funciones */
+.boton-funcion:nth-child(1):hover, /* sin */
+.boton-funcion:nth-child(2):hover { /* log */
+  transform: scale(1.08) rotate(1deg);
+}
+
+.boton-funcion:nth-child(3):hover, /* ( */
+.boton-funcion:nth-child(4):hover { /* ) */
+  transform: scale(1.08) rotate(-1deg);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .boton-funcion {
+    min-height: 40px;
+    font-size: 14px;
+  }
+  
+  .boton-funcion:nth-child(3),
+  .boton-funcion:nth-child(4) {
+    font-size: 18px;
+  }
+  
+  .grid-funciones {
+    gap: 8px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}

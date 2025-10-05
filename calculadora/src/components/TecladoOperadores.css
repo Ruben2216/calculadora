@@ -1,0 +1,159 @@
+/* TecladoOperadores.css */
+.teclado-operadores {
+  margin-bottom: 15px;
+}
+
+.grid-operadores {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.boton-operador {
+  background: linear-gradient(145deg, #4a5c6b, #3b4c5a);
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  min-height: 48px;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.boton-operador:hover {
+  background: linear-gradient(145deg, #6a7c8b, #5a6c7b);
+  transform: scale(1.1);
+  box-shadow: 
+    0 10px 25px rgba(74, 92, 107, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  color: #f0f8ff;
+}
+
+.boton-operador:active {
+  transform: scale(1.05);
+  box-shadow: 
+    inset 3px 3px 10px rgba(0, 0, 0, 0.4),
+    inset -3px -3px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.1s ease;
+}
+
+/* Efectos especiales para diferentes operadores */
+.boton-operador:nth-child(1) { /* + */
+  background: linear-gradient(145deg, #2c5282, #2a4365);
+}
+
+.boton-operador:nth-child(1):hover {
+  background: linear-gradient(145deg, #4c72a2, #3c6292);
+  transform: scale(1.1);
+  box-shadow: 
+    0 10px 25px rgba(44, 82, 130, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.4);
+  color: #e6f3ff;
+}
+
+.boton-operador:nth-child(2) { /* - */
+  background: linear-gradient(145deg, #1a202c, #171923);
+}
+
+.boton-operador:nth-child(2):hover {
+  background: linear-gradient(145deg, #3a404c, #2a303c);
+  transform: scale(1.1);
+  box-shadow: 
+    0 10px 25px rgba(26, 32, 44, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  color: #f0f4f8;
+}
+
+.boton-operador:nth-child(3) { /* × */
+  background: linear-gradient(145deg, #3b4c5a, #304356);
+}
+
+.boton-operador:nth-child(3):hover {
+  background: linear-gradient(145deg, #5b6c7a, #4b5c6a);
+  transform: scale(1.1);
+  box-shadow: 
+    0 10px 25px rgba(59, 76, 90, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  color: #f0f8ff;
+}
+
+.boton-operador:nth-child(4) { /* ÷ */
+  background: linear-gradient(145deg, #4a5c6b, #3b4c5a);
+}
+
+.boton-operador:nth-child(4):hover {
+  background: linear-gradient(145deg, #6a7c8b, #5a6c7b);
+  transform: scale(1.1);
+  box-shadow: 
+    0 10px 25px rgba(74, 92, 107, 0.5),
+    inset 0 2px 0 rgba(255, 255, 255, 0.3);
+  color: #f0f8ff;
+}
+
+
+
+/* Efecto sutil en operadores */
+.boton-operador::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  border-radius: 10px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.boton-operador:hover::before {
+  opacity: 1;
+}
+
+/* Animación de entrada */
+.boton-operador {
+  animation: slideInRight 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.boton-operador:nth-child(1) { animation-delay: 0.1s; }
+.boton-operador:nth-child(2) { animation-delay: 0.15s; }
+.boton-operador:nth-child(3) { animation-delay: 0.2s; }
+.boton-operador:nth-child(4) { animation-delay: 0.25s; }
+
+@keyframes slideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efecto de tecla presionada */
+.boton-operador:active {
+  animation: keyPress 0.1s ease;
+}
+
+@keyframes keyPress {
+  0% { transform: scale(1); }
+  50% { transform: scale(0.95); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .boton-operador {
+    min-height: 45px;
+    font-size: 20px;
+  }
+  
+  .grid-operadores {
+    gap: 8px;
+  }
+}

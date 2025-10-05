@@ -1,0 +1,104 @@
+/* Pantalla.css */
+.pantalla {
+  background: linear-gradient(145deg, #1a202c, #304356);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 
+    inset 2px 2px 8px rgba(0, 0, 0, 0.4),
+    inset -2px -2px 8px rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pantalla-expresion {
+  margin-bottom: 10px;
+}
+
+.input-expresion {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #a3b8cc;
+  font-size: 22px;
+  font-family: 'Courier New', monospace;
+  padding: 10px 0;
+  outline: none;
+  text-align: right;
+  min-height: 35px;
+}
+
+.input-expresion::placeholder {
+  color: #6b7c8d;
+  font-style: italic;
+}
+
+.pantalla-resultado {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
+}
+
+.input-resultado {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #e2f4ff;
+  font-size: 36px;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  padding: 5px 0;
+  outline: none;
+  text-align: right;
+  min-height: 45px;
+  text-shadow: 0 0 10px rgba(226, 244, 255, 0.3);
+}
+
+/* Efecto de brillo en la pantalla */
+.pantalla::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(48, 67, 86, 0.8), transparent);
+  border-radius: 15px 15px 0 0;
+}
+
+.pantalla {
+  position: relative;
+}
+
+/* Animación sutil en la pantalla */
+.pantalla {
+  animation: pantallaGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes pantallaGlow {
+  0% {
+    box-shadow: 
+      inset 2px 2px 8px rgba(0, 0, 0, 0.4),
+      inset -2px -2px 8px rgba(255, 255, 255, 0.05),
+      0 0 0 rgba(48, 67, 86, 0);
+  }
+  100% {
+    box-shadow: 
+      inset 2px 2px 8px rgba(0, 0, 0, 0.4),
+      inset -2px -2px 8px rgba(255, 255, 255, 0.05),
+      0 0 15px rgba(48, 67, 86, 0.3);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pantalla {
+    padding: 15px;
+  }
+  
+  .input-expresion {
+    font-size: 18px;
+  }
+  
+  .input-resultado {
+    font-size: 28px;
+  }
+}

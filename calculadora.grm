@@ -1,0 +1,15 @@
+"Name" = 'Calculadora'
+"Author" = 'Jose Ruben Clemente Corzo'
+"About0" = 'Porgrama que ....'
+ entero = {Number}+
+ real = {Number}+ '.' {Number}+
+ Seno = 'seno' 
+ Log = 'log'
+      
+"Start Symbol" = <E>
+
+<E> ::= <E> '+' <T> | <E> '-' <T> | <T>
+     
+<T> ::= <T> '*' <F> | <T> '/' <F> | <F>
+     
+<F> ::= '(' <E> ')' | entero | real | Seno '(' <E> ')' | Log '(' <E> ')'    
