@@ -90,6 +90,12 @@ const Calculadora = () => {
     setMemoria(0);
   };
 
+  // Función para manejar entrada por voz
+  const manejarEntradaVoz = (expresionVoz) => {
+    // Agregar la expresión de voz a la expresión actual
+    setExpresion(expresion + expresionVoz);
+  };
+
   return (
     <div className="calculadora">
       <div className="calculadora-contenedor">
@@ -106,7 +112,7 @@ const Calculadora = () => {
         />
         
         <div className="teclado">
-          {/* Fila de funciones de memoria y limpieza */}
+          {/* Fila de funciones de memoria y limpieza con botón de voz */}
           <div className="fila-memoria">
             <button 
               className="boton boton-memoria" 
@@ -153,8 +159,11 @@ const Calculadora = () => {
           </div>
 
           <div className="calculadora-cuerpo">
-            {/* Funciones en la parte superior */}
-            <TecladoFunciones onFuncionClick={manejarEntrada} />
+            {/* Funciones en la parte superior con botón de voz */}
+            <TecladoFunciones 
+              onFuncionClick={manejarEntrada}
+              onVoiceInput={manejarEntradaVoz}
+            />
             
             {/* Sección principal con números y operadores */}
             <div className="seccion-principal">

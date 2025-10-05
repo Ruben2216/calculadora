@@ -1,7 +1,8 @@
 import React from 'react';
+import MicrophoneButton from './MicrophoneButton';
 import './TecladoFunciones.css';
 
-const TecladoFunciones = ({ onFuncionClick }) => {
+const TecladoFunciones = ({ onFuncionClick, onVoiceInput }) => {
   const funciones = [
     { valor: 'sin(', texto: 'sin', titulo: 'Función Seno' },
     { valor: 'log(', texto: 'log', titulo: 'Función Logaritmo base 10' },
@@ -22,6 +23,11 @@ const TecladoFunciones = ({ onFuncionClick }) => {
             {funcion.texto}
           </button>
         ))}
+        
+        {/* Botón de entrada por voz al final de la fila */}
+        <div className="microphone-wrapper">
+          <MicrophoneButton onVoiceInput={onVoiceInput} />
+        </div>
       </div>
     </div>
   );
