@@ -146,31 +146,3 @@
     0 6px 20px rgba(74, 92, 107, 0.4),
     inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .calculadora-contenedor {
-    padding: 20px;
-    margin: 10px;
-  }
-  
-  .calculadora-cuerpo {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .seccion-principal {
-    grid-template-columns: 1fr;
-    gap: 15px;
-  }
-  
-  .fila-memoria {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-  }
-  
-  .boton {
-    min-height: 45px;
-    font-size: 16px;
-  }
-}

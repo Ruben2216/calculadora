@@ -123,23 +123,3 @@
 .grid-numerico .boton-numero:nth-child(10) {
   grid-column: span 2;
 }
-
-
-
-/* Responsive */
-@media (max-width: 768px) {
-  .boton-numero {
-    min-height: 50px;
-    font-size: 20px;
-  }
-  
-  .boton-igual {
-    min-height: 50px;
-    font-size: 24px;
-    margin-top: 8px;
-  }
-  
-  .grid-numerico {
-    gap: 8px;
-  }
-}

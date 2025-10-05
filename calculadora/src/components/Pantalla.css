@@ -87,18 +87,3 @@
       0 0 15px rgba(48, 67, 86, 0.3);
   }
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .pantalla {
-    padding: 15px;
-  }
-  
-  .input-expresion {
-    font-size: 18px;
-  }
-  
-  .input-resultado {
-    font-size: 28px;
-  }
-}

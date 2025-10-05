@@ -125,15 +125,3 @@
   50% { transform: scale(0.95); }
   100% { transform: scale(1); }
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .boton-operador {
-    min-height: 45px;
-    font-size: 20px;
-  }
-  
-  .grid-operadores {
-    gap: 8px;
-  }
-}

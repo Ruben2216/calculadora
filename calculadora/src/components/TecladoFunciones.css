@@ -119,21 +119,3 @@
 .boton-funcion:nth-child(4):hover { /* ) */
   transform: scale(1.08) rotate(-1deg);
 }
-
-/* Responsive */
-@media (max-width: 768px) {
-  .boton-funcion {
-    min-height: 40px;
-    font-size: 14px;
-  }
-  
-  .boton-funcion:nth-child(3),
-  .boton-funcion:nth-child(4) {
-    font-size: 18px;
-  }
-  
-  .grid-funciones {
-    gap: 8px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-  }
-}
