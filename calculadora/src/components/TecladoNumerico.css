@@ -63,7 +63,7 @@
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 13px;
   pointer-events: none;
 }
@@ -108,7 +108,7 @@
   left: 2px;
   right: 2px;
   bottom: 2px;
-  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 13px;
   pointer-events: none;
   opacity: 0;
@@ -124,35 +124,7 @@
   grid-column: span 2;
 }
 
-/* Animaciones de entrada para los números */
-.boton-numero {
-  animation: fadeInUp 0.5s ease-out;
-  animation-fill-mode: both;
-}
 
-.boton-numero:nth-child(1) { animation-delay: 0.1s; }
-.boton-numero:nth-child(2) { animation-delay: 0.15s; }
-.boton-numero:nth-child(3) { animation-delay: 0.2s; }
-.boton-numero:nth-child(4) { animation-delay: 0.25s; }
-.boton-numero:nth-child(5) { animation-delay: 0.3s; }
-.boton-numero:nth-child(6) { animation-delay: 0.35s; }
-.boton-numero:nth-child(7) { animation-delay: 0.4s; }
-.boton-numero:nth-child(8) { animation-delay: 0.45s; }
-.boton-numero:nth-child(9) { animation-delay: 0.5s; }
-.boton-numero:nth-child(10) { animation-delay: 0.55s; }
-.boton-numero:nth-child(11) { animation-delay: 0.6s; }
-.boton-numero:nth-child(12) { animation-delay: 0.65s; }
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 /* Responsive */
 @media (max-width: 768px) {

@@ -82,7 +82,7 @@
 }
 
 .production-rule {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: #667eea;
   color: white;
   padding: 24px 32px;
   border-radius: 12px;
@@ -266,16 +266,7 @@
   overflow: hidden;
 }
 
-.production-rule::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  animation: shine 2s infinite;
-}
+
 
 @keyframes shine {
   0% {
