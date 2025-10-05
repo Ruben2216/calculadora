@@ -74,8 +74,6 @@ const Calculadora = () => {
     setShowProductions(!showProductions);
   };
 
-
-
   // Funciones de memoria
   const guardarEnMemoria = () => {
     const valor = parseFloat(resultado);
